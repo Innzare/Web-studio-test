@@ -1,1 +1,1 @@
-https://innzare.github.io/Web-studio-test/dist/index.html
+https://innzare.github.io/Web-studio-test/dist
