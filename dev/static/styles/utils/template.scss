@@ -23,6 +23,10 @@
    display: none;
 }
 
+body.lock{
+   overflow: hidden;
+}
+
 // // Стили для бургер меню==============================================================
 @media (max-width: $mw) {
    .header-menu__icon {
