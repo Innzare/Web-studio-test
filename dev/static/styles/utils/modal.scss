@@ -1,0 +1,202 @@
+.modal-overlay{
+   opacity: 0;
+   z-index: -1;
+   position: fixed;
+   top: 0;
+   right: 0;
+   left: 0;
+   bottom: 0;
+   background: rgba(0, 0, 0, 0);
+   transition: all .4s ;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   backdrop-filter: blur(5px);
+}
+.modal-content{
+   margin: 30px 0;
+   opacity: 0;
+   z-index: -1;
+   width: 100%;
+   background: #fff;
+   padding: 0 10px;
+   overflow: hidden;
+   transform: scale(0);
+   transition: all 0.4s ;
+}
+.modal-header{
+   padding-top: 45px;
+   display: flex;
+   justify-content: space-between;
+}
+.modal-title{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   color: $orange;
+   text-transform: uppercase;
+   font-family: "Russo-one";
+   font-size: 24px;
+   font-weight: 400;
+   font-style: normal;
+   letter-spacing: normal;
+   line-height: 30px;
+}
+.modal-close{
+   font-size: 58px;
+   transition: all .3s;
+   cursor: pointer;
+   &:hover{
+      transform: rotate(180deg);
+   }
+   @include phones{
+      font-size: 38px;
+   }
+}
+.modal-body{
+   opacity: 0;
+   transition: all .4s ;
+   width: 100%;
+   height: 100%;
+   padding: 20px;
+   font-weight: normal;
+   .modal-subtitle{
+      font-size: 18px;
+      color: #333333;
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: 700;
+      font-style: normal;
+      letter-spacing: normal;
+      line-height: 25px;
+      margin-bottom: 25px;
+   }
+   form{
+      display: flex;
+      flex-direction: column;
+      .holder {
+         height: 40px;
+         width: 100%;
+         position: relative;
+         background-color: #fff;
+         border-radius: 3px;
+         margin-bottom: 20px;
+      }
+      .holder input, .holder label {
+         position: absolute;
+         top: 0;
+      }
+      .holder input {
+         width: 100%;
+         background: rgba(0, 0, 0, 0);
+         padding: 0 10px;
+         color: #000;
+         height: 100%;
+         border-radius: 3px;
+         z-index: 1;
+         transition: all .3s;
+         &:focus{
+            background-color: #fff;
+         }
+      }
+      .holder label {
+         height: 100%;
+         top: 6px;
+         left: 10px;
+         line-height: 26px;
+         z-index: 0;
+         color: #777777;
+      }
+      .holder label > span {
+         color: #ff0000;
+      }
+      input{
+         width: 100%;
+         border-radius: 3px;
+         border: 1px solid #a1a1a1;
+         padding: 10px 10px;
+         margin-bottom: 20px;
+         font-size: 16px;
+         transition: all .3s;
+         &::placeholder{
+            transition: all .3s;
+            opacity: 1;
+         }
+         &:focus{
+            border: 1px solid $orange;
+            &::placeholder{
+               opacity: 0;
+            }
+         }
+      }
+      button{
+         margin-bottom: 40px;
+         width: 100%;
+         padding: 10px 0;
+         box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+         border-radius: 3px;
+         background-color: #ffaf02;
+         color: #333333;
+         font-family: "Russo-one";
+         font-size: 20px;
+         font-weight: 400;
+         font-style: normal;
+         letter-spacing: normal;
+         line-height: 30px;
+         text-transform: uppercase;
+         transition: all .3s;
+         &:hover{
+            transform: translateY(-5px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+         }
+      }
+   }
+}
+
+
+
+
+
+.modal-footer{
+}
+.modal{}
+
+.modal.open .modal-overlay,
+.modal.open .modal-content {
+   opacity: 1;
+   z-index: 1000;
+}
+
+.modal.open .modal-body{
+   opacity: 1;
+   transform: scale(1);
+}
+
+.modal.hide .modal-overlay,
+.modal.hide .modal-content {
+   opacity: 1;
+   z-index: 1000;
+}
+
+.modal.open .modal-content{
+   margin-top: -100px;
+   transform: scale(1);
+   // margin: 50px 0;
+}
+
+.modal.open .modal-overlay{
+   background: rgba(0, 0, 0, 0.5);
+   overflow-x: auto;
+   display: flex;
+   align-items: center;
+
+}
+
+.modal.hide .modal-content{
+   transform: scale(0);
+}
+
+.modal.hide .modal-overlay{
+   background: rgba(0, 0, 0, 0);
+}

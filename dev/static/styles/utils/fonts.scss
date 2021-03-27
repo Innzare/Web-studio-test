@@ -1,0 +1,11 @@
+// @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
+
+@mixin font-face($font-name, $path, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: quote($font-name);
+    src: url(#{$path}.woff) format("woff"), url(#{$path}.woff2) format("woff2"), url(#{$path}.ttf) format("truetype");
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+@include font-face("Russo-one", "../fonts/Russo_One", 400, "normal");
